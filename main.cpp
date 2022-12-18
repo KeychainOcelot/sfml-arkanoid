@@ -93,11 +93,11 @@ int main()
     Paddle paddle{windowWidth / 2, windowHeight - 50};
 
     //Creation of game window
-    RenderWindow window{{windowWidth, windowHeight}, "Arkanoid"};
+    RenderWindow window(VideoMode(windowWidth, windowHeight), "Arkanoid");
     window.setFramerateLimit(60);
 
     //Game loop
-    while(true)
+    while(window.isOpen())
     {
         //"Clear" the window from previously-drawn graphics
         window.clear(Color::Black);
