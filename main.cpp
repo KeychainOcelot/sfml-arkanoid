@@ -57,8 +57,10 @@ struct Paddle
     {
         shape.move(velocity);
 
-        if(Keyboard::isKeyPressed(Keyboard::Key::Left) && left() > 0) velocity.x = -paddleVelocity;
-        else if(Keyboard::isKeyPressed(Keyboard::Key::Right) && right() < windowWidth) velocity.x = paddleVelocity;
+        if(Keyboard::isKeyPressed(Keyboard::Key::Left) && left() > 0) 
+            velocity.x = -paddleVelocity;
+        else if(Keyboard::isKeyPressed(Keyboard::Key::Right) && 
+                right() < windowWidth) velocity.x = paddleVelocity;
 
         else velocity.x = 0;
     }
@@ -73,7 +75,8 @@ struct Paddle
 
 template<class T1, class T2> bool isIntersecting(T1& mA, T2& mB)
 {
-    return mA.right() >= mB.left() && mA.left() <= mB.right() && mA.bottom() >= mB.top() && mA.top() <= mB.bottom();
+    return mA.right() >= mB.left() && mA.left() <= mB.right() && 
+        mA.bottom() >= mB.top() && mA.top() <= mB.bottom();
 }
 
 void testCollision(Paddle& mPaddle, Ball& mBall)
